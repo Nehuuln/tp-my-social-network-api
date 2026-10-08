@@ -1,7 +1,12 @@
+import fs from "node:fs";
+import https from "node:https";
 import express from "express";
 import mongoose from "mongoose";
+import helmet from "helmet";
 import routes from "../controllers/routes.mjs";
 import authToken from "../middlewares/auth.mjs";
+import corsOptions from "../middlewares/cors.mjs";
+import { limiter, authLimiter } from "../middlewares/rateLimit.mjs";
 
 const Server = class Server {
     constructor() {
@@ -19,7 +24,23 @@ const Server = class Server {
         }
     }
 
+    sslOptions() {
+        try {
+            return {
+                key: fs.readFileSync(process.env.SSL_KEY_PATH || "ssl/social-network.key"),
+                cert: fs.readFileSync(process.env.SSL_CERT_PATH || "ssl/social-network.crt")
+            };
+        } catch (error) {
+            console.error("[ERROR] SSL certificate ->", error.message);
+            process.exit(1);
+        }
+    }
+
     middleware() {
+        this.app.use(helmet());
+        this.app.use(corsOptions);
+        this.app.use(limiter);
+        this.app.use("/auth", authLimiter);
         this.app.use(express.json());
     }
 
@@ -61,8 +82,8 @@ const Server = class Server {
         this.middleware();
         this.routes();
 
-        this.app.listen(this.port, () => {
-            console.log(`[OK] Server listening on port ${this.port}`);
+        https.createServer(this.sslOptions(), this.app).listen(this.port, () => {
+            console.log(`[OK] HTTPS server listening on port ${this.port}`);
         });
     }
 }

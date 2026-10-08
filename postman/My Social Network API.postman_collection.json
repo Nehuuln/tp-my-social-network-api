@@ -1,10 +1,10 @@
 {
   "info": {
-    "_postman_id": "4d5b6fc1-8e5c-4e68-92b4-c89db42aed0f",
+    "_postman_id": "e4f3744a-09af-4425-b59b-02dd53371802",
     "name": "My Social Network API",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "_exporter_id": "26679542",
-    "_collection_link": "https://go.postman.co/collection/26679542-4d5b6fc1-8e5c-4e68-92b4-c89db42aed0f?source=collection_link"
+    "_collection_link": "https://go.postman.co/collection/26679542-e4f3744a-09af-4425-b59b-02dd53371802?source=collection_link"
   },
   "item": [
     {
@@ -1844,7 +1844,7 @@
               "variable": [
                 {
                   "key": "id",
-                  "value": ""
+                  "value": "6ac76a3dac806f227aea220c"
                 }
               ]
             }
@@ -1899,7 +1899,7 @@
               "variable": [
                 {
                   "key": "id",
-                  "value": ""
+                  "value": "6ac780834cfab1c9d7694e13"
                 }
               ]
             }
@@ -1993,7 +1993,7 @@
               "variable": [
                 {
                   "key": "id",
-                  "value": ""
+                  "value": "6ac780834cfab1c9d7694e13"
                 }
               ]
             }
@@ -2018,7 +2018,7 @@
               "variable": [
                 {
                   "key": "id",
-                  "value": ""
+                  "value": "6ac76a3dac806f227aea220c"
                 }
               ]
             }
@@ -2042,7 +2042,7 @@
               "variable": [
                 {
                   "key": "id",
-                  "value": ""
+                  "value": "6ac780bd4cfab1c9d7694e1b"
                 }
               ]
             }
