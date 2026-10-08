@@ -28,6 +28,7 @@ const Server = class Server {
         new routes.Users(this.app, authToken);
         new routes.Groups(this.app, authToken);
         new routes.Events(this.app, authToken);
+        new routes.Threads(this.app, authToken);
 
         this.app.use((req, res) => {
             res.status(404).json({
