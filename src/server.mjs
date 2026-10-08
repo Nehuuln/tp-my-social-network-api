@@ -1,5 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
+import routes from "../controllers/routes.mjs";
+import authToken from "../middlewares/auth.mjs";
 
 const Server = class Server {
     constructor() {
@@ -22,6 +24,9 @@ const Server = class Server {
     }
 
     routes() {
+        new routes.Auth(this.app);
+        new routes.Users(this.app, authToken);
+
         this.app.use((req, res) => {
             res.status(404).json({
                 code: 404,
