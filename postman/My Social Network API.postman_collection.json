@@ -1497,6 +1497,322 @@
           "response": []
         }
       ]
+    },
+    {
+      "name": "Polls",
+      "item": [
+        {
+          "name": "Poll",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"Organisation du cours API\",\r\n    \"questions\": [\r\n        {\r\n            \"title\": \"Quel horaire vous convient le mieux ?\",\r\n            \"answers\": [\r\n                {\r\n                    \"label\": \"Matin\"\r\n                },\r\n                {\r\n                    \"label\": \"Après-midi\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"title\": \"Quel sujet voulez-vous approfondir ?\",\r\n            \"answers\": [\r\n                {\r\n                    \"label\": \"REST\"\r\n                },\r\n                {\r\n                    \"label\": \"GraphQL\"\r\n                },\r\n                {\r\n                    \"label\": \"WebSocket\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/events/:id/polls",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "events",
+                ":id",
+                "polls"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Event polls",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/events/:id/polls",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "events",
+                ":id",
+                "polls"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Poll by id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/polls/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "polls",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Poll by id",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"Organisation du cours API - M1\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/polls/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "polls",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Poll by id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/polls/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "polls",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Answer poll",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"answers\": [\r\n        {\r\n            \"question\": \"\",\r\n            \"answer\": \"\"\r\n        },\r\n        {\r\n            \"question\": \"\",\r\n            \"answer\": \"\"\r\n        }\r\n    ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/polls/:id/responses",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "polls",
+                ":id",
+                "responses"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "My response",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/polls/:id/responses/me",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "polls",
+                ":id",
+                "responses",
+                "me"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "My response",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"answers\": [\r\n        {\r\n            \"question\": \"\",\r\n            \"answer\": \"\"\r\n        },\r\n        {\r\n            \"question\": \"\",\r\n            \"answer\": \"\"\r\n        }\r\n    ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/polls/:id/responses/me",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "polls",
+                ":id",
+                "responses",
+                "me"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "My response",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/polls/:id/responses/me",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "polls",
+                ":id",
+                "responses",
+                "me"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Responses",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/polls/:id/responses",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "polls",
+                ":id",
+                "responses"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Results",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/polls/:id/results",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "polls",
+                ":id",
+                "results"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
     }
   ],
   "auth": {

@@ -4,6 +4,7 @@ import Groups from "./groups.mjs";
 import Events from "./events.mjs";
 import Threads from "./threads.mjs";
 import Albums from "./albums.mjs";
+import Polls from "./polls.mjs";
 
 export default {
     Users,
@@ -12,4 +13,5 @@ export default {
     Events,
     Threads,
     Albums,
+    Polls,
 }
