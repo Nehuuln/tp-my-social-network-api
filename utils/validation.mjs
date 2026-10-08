@@ -16,6 +16,32 @@ export const formatValidationError = (error) => {
     return null;
 };
 
+export const handleError = (res, error, label) => {
+    const details = formatValidationError(error);
+    if (details) {
+        return res.status(400).json({
+            code: 400,
+            message: "Validation failed",
+            errors: details
+        });
+    }
+
+    const duplicates = formatDuplicateError(error);
+    if (duplicates) {
+        return res.status(409).json({
+            code: 409,
+            message: "Conflict",
+            errors: duplicates
+        });
+    }
+
+    console.error(`[ERROR] ${label} ->`, error);
+    res.status(500).json({
+        code: 500,
+        message: "Internal Server Error"
+    });
+};
+
 export const formatDuplicateError = (error) => {
     if (error.code !== 11000) {
         return null;
