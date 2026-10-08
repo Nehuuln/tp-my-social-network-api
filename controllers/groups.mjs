@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import GroupModel from "../models/group.mjs";
-import UserModel from "../models/user.mjs";
 import { handleError } from "../utils/validation.mjs";
+import { findUser } from "../utils/users.mjs";
 
 const USER_FIELDS = "firstname lastname avatar";
 
@@ -24,28 +24,6 @@ const Groups = class Groups {
             code: 403,
             message
         });
-    }
-
-    async findUser(res, userId) {
-        if (!mongoose.isValidObjectId(userId)) {
-            res.status(400).json({
-                code: 400,
-                message: "Validation failed",
-                errors: [{ field: "user_id", message: "user_id is invalid" }]
-            });
-            return null;
-        }
-
-        const user = await UserModel.findById(userId);
-        if (!user) {
-            res.status(404).json({
-                code: 404,
-                message: "User not found"
-            });
-            return null;
-        }
-
-        return user;
     }
 
     addGroup() {
@@ -217,7 +195,7 @@ const Groups = class Groups {
                     return this.forbidden(res, "Only an administrator can add members to this group");
                 }
 
-                const user = await this.findUser(res, user_id);
+                const user = await findUser(res, user_id);
                 if (!user) {
                     return;
                 }
@@ -292,7 +270,7 @@ const Groups = class Groups {
                     return this.forbidden(res, "Only an administrator can add administrators to this group");
                 }
 
-                const user = await this.findUser(res, user_id);
+                const user = await findUser(res, user_id);
                 if (!user) {
                     return;
                 }
