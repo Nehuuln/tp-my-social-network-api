@@ -1042,6 +1042,461 @@
           "response": []
         }
       ]
+    },
+    {
+      "name": "Albums",
+      "item": [
+        {
+          "name": "Album",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Photos du cours API\",\r\n    \"description\": \"Les photos prises pendant le cours d'intro sur les API\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/events/:id/albums",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "events",
+                ":id",
+                "albums"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Event albums",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/events/:id/albums",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "events",
+                ":id",
+                "albums"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Album by id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/albums/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "albums",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Album by id",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Photos du cours API - M1\",\r\n    \"description\": \"Les photos prises pendant le cours M1 sur les API\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/albums/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "albums",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Album by id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/albums/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "albums",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Photo",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"url\": \"https://picsum.photos/id/1/800/600\",\r\n    \"caption\": \"La salle H222 avant le cours\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/albums/:id/photos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "albums",
+                ":id",
+                "photos"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Photos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/albums/:id/photos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "albums",
+                ":id",
+                "photos"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Photo by id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/albums/:id/photos/:photoId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "albums",
+                ":id",
+                "photos",
+                ":photoId"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                },
+                {
+                  "key": "photoId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Photo by id",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"caption\": \"La salle H322 avant le cours\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/albums/:id/photos/:photoId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "albums",
+                ":id",
+                "photos",
+                ":photoId"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                },
+                {
+                  "key": "photoId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Photo by id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/albums/:id/photos/:photoId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "albums",
+                ":id",
+                "photos",
+                ":photoId"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                },
+                {
+                  "key": "photoId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Comment",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"content\": \"Super photo !\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/albums/:id/photos/:photoId/comments",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "albums",
+                ":id",
+                "photos",
+                ":photoId",
+                "comments"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                },
+                {
+                  "key": "photoId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Comments",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/albums/:id/photos/:photoId/comments",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "albums",
+                ":id",
+                "photos",
+                ":photoId",
+                "comments"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                },
+                {
+                  "key": "photoId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Comment by id",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"content\": \"Commentaire modifié\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/albums/:id/photos/:photoId/comments/:commentId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "albums",
+                ":id",
+                "photos",
+                ":photoId",
+                "comments",
+                ":commentId"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                },
+                {
+                  "key": "photoId",
+                  "value": ""
+                },
+                {
+                  "key": "commentId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Comment by id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/albums/:id/photos/:photoId/comments/:commentId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "albums",
+                ":id",
+                "photos",
+                ":photoId",
+                "comments",
+                ":commentId"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                },
+                {
+                  "key": "photoId",
+                  "value": ""
+                },
+                {
+                  "key": "commentId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
     }
   ],
   "auth": {
